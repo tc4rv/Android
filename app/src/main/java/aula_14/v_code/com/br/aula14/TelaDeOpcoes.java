@@ -50,8 +50,6 @@ public class TelaDeOpcoes extends AppCompatActivity {
         }
 
         protected void onPostExecute(ArrayList<String> lista){
-            Log.e("Primeiro item da Lista", lista.get(0));
-
             Intent intent = getIntent().setClass(atividade, TelaExtrato.class);
             intent.putExtra(LISTA_EXTRATO, lista);
 

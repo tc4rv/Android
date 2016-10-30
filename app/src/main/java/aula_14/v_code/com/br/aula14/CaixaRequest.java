@@ -83,6 +83,7 @@ public class CaixaRequest {
                     dado = "Transferência";
 
                 lista.add(dado);
+                lista.add(jsonRes.getJSONObject(i).getString("data"));
             }
         }
         catch(Exception e){

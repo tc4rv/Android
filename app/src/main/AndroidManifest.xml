@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".TelaDeOpcoes" />
         <activity android:name=".TelaExtrato" />
-        <activity android:name=".TelaTransferencia"></activity>
+        <activity android:name=".TelaTransferencia" />
+        <activity android:name=".ListaItem"></activity>
     </application>
 
 </manifest>

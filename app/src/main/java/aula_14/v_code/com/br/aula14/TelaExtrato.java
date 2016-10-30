@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,10 +26,12 @@ public class TelaExtrato extends AppCompatActivity {
         String message = intent.getStringExtra(MainActivity.NOME_CLIENTE) + ", veja abaixo o seu extrato";
         textViewNomeCliente.setText(message);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-
         ArrayList<String> lista = intent.getStringArrayListExtra(TelaDeOpcoes.LISTA_EXTRATO);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
+
+        BaseAdapter adapter = new ListaAdapter(this, lista);
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
 
         listView.setAdapter(adapter);
     }
