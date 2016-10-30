@@ -3,7 +3,10 @@ package aula_14.v_code.com.br.aula14;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -55,7 +58,37 @@ public class CaixaRequest {
 
     }
 
-    public void extrato(){
+    public ArrayList<String> extrato(){
+        ArrayList<String> lista;
+        try{
+            Request request = new Request.Builder().url(rota+"/extrato").get().build();
 
+            Response response = client.newCall(request).execute();
+            //Log.e("response", response.body().toString());
+
+            String res = response.body().string();
+
+            JSONArray jsonRes = new JSONArray(res);
+
+            lista = new ArrayList<String>();
+
+            for(int i = 0; i < jsonRes.length(); i++) {
+                String dado = jsonRes.getJSONObject(i).getString("operacao");
+
+                if(dado.equals("0"))
+                    dado = "Saque";
+                else if(dado.equals("1"))
+                    dado = "Extrato";
+                else
+                    dado = "Transferência";
+
+                lista.add(dado);
+            }
+        }
+        catch(Exception e){
+            lista = null;
+        }
+
+        return lista;
     }
 }

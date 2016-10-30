@@ -1,12 +1,17 @@
 package aula_14.v_code.com.br.aula14;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class TelaExtrato extends AppCompatActivity {
 
@@ -17,26 +22,14 @@ public class TelaExtrato extends AppCompatActivity {
 
         Intent intent = getIntent();
         TextView textViewNomeCliente = (TextView) findViewById(R.id.textView_NomeCliente);
-        String message = intent.getStringExtra(MainActivity.NOME_CLIENTE) + ", escolha o intervalo do extrato";
-
+        String message = intent.getStringExtra(MainActivity.NOME_CLIENTE) + ", veja abaixo o seu extrato";
         textViewNomeCliente.setText(message);
-    }
 
-    public void consultarExtrato(View view){
-        DatePicker datePickerInicio = (DatePicker) findViewById(R.id.datePickerInicio);
-        int diaInicio = datePickerInicio.getDayOfMonth();
-        int mesInicio = datePickerInicio.getMonth();
-        int anoInicio = datePickerInicio.getYear();
+        ListView listView = (ListView) findViewById(R.id.listView);
 
-        DatePicker datePickerFim = (DatePicker) findViewById(R.id.datePickerFim);
-        int diaFim = datePickerFim.getDayOfMonth();
-        int mesFim = datePickerFim.getMonth();
-        int anoFim = datePickerFim.getYear();
+        ArrayList<String> lista = intent.getStringArrayListExtra(TelaDeOpcoes.LISTA_EXTRATO);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
 
-        String teste = "Data início: " + diaInicio + "/" + (mesInicio + 1)+ "/" + anoInicio + "\n" +
-                       "Data Término: "+ diaFim + "/" + (mesFim + 1) + "/" + anoFim;
-
-        Toast.makeText(this, teste, Toast.LENGTH_LONG).show();
-        //Até aqui, tudo ok.
+        listView.setAdapter(adapter);
     }
 }

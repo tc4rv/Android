@@ -13,69 +13,16 @@
         android:id="@+id/textView_NomeCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="VVVVVVVVVVVVVV"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"/>
 
-    <RelativeLayout
-        android:id="@+id/data1"
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_NomeCliente"
-        android:layout_centerHorizontal="false">
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView_NomeCliente">
 
-        <TextView
-            android:id="@+id/labelInicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Inicia em:"
-            android:textSize="20dp"
-            android:paddingTop="20dp"
-            android:layout_alignParentStart="true"/>
 
-        <DatePicker
-            android:scaleX=".8"
-            android:scaleY=".8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/datePickerInicio"
-            android:calendarViewShown="false"
-            android:layout_gravity="left"
-            android:layout_below="@id/labelInicio"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/data2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/data1"
-        android:layout_centerHorizontal="false">
-
-        <TextView
-            android:id="@+id/labelFim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Termina em:"
-            android:textSize="20dp"
-            android:layout_alignParentStart="false"/>
-
-        <DatePicker
-            android:scaleX=".8"
-            android:scaleY=".8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/datePickerFim"
-            android:calendarViewShown="false"
-            android:layout_gravity="left"
-            android:layout_below="@id/labelFim"
-            />
-    </RelativeLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/data2"
-        android:text="Consultar Extrato"
-        android:onClick="consultarExtrato"/>
+    </ListView>
 </RelativeLayout>
