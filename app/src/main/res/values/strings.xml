@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Blank Bank</string>
+    <string name="text_edit_message">Escreva seu nome de usuário</string>
+    <string name="button_message">Entrar</string>
+</resources>
