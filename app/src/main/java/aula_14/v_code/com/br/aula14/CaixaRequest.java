@@ -31,13 +31,11 @@ public class CaixaRequest {
             json.put("agency", agencia);
             json.put("account", conta);
             json.put("password", senha);
-            Log.e("Caixa", json.toString());
 
             RequestBody body = RequestBody.create(JSON, json.toString());
             Request request = new Request.Builder().url(rota+"/login").post(body).build();
 
             Response response = client.newCall(request).execute();
-            Log.e("response", response.body().toString());
 
             String res = response.body().string();
 
@@ -54,8 +52,31 @@ public class CaixaRequest {
         return nome;
     }
 
-    public void transferencia(){
+    public double transferencia(String agencia, String conta, double valor){
+        JSONObject destino = new JSONObject();
+        double quantia = -1;
 
+        try{
+            destino.put("agency", agencia);
+            destino.put("account", conta);
+            destino.put("value", valor);
+
+            RequestBody body = RequestBody.create(JSON, destino.toString());
+            Request request = new Request.Builder().url(rota+"/transferencia").post(body).build();
+
+            Response response = client.newCall(request).execute();
+
+            String res = response.body().string();
+
+            JSONObject jsonRes = new JSONObject(res);
+
+            quantia =  jsonRes.getDouble("value");
+        }
+        catch(Exception e){
+            quantia = -1;
+        }
+
+        return quantia;
     }
 
     public ArrayList<String> extrato(){
