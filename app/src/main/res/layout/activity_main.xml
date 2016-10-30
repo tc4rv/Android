@@ -1,22 +1,69 @@
-<?xml version='1.0' encoding='utf-8'?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    tools:context="aula_14.v_code.com.br.aula14.MainActivity" >
 
-    <EditText
-        android:id="@+id/edit_text"
-        android:layout_width="0dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:hint="@string/text_edit_message" />
-    <Button
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="@string/button_message"
-        android:onClick="sendMessage" />
+        android:text="@string/boasVindas"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"/>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+
+        <EditText
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText_agencia"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="@dimen/edit_text_alignment"
+            android:hint="@string/agencia_text"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:inputType="number"/>
+
+        <EditText
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/editText_conta"
+            android:layout_below="@+id/editText_agencia"
+            android:layout_alignStart="@+id/editText_agencia"
+            android:hint="@string/conta_text"
+            android:inputType="number"/>
+
+        <EditText
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/editText_password"
+            android:layout_below="@+id/editText_conta"
+            android:layout_alignStart="@+id/editText_agencia"
+            android:hint="@string/senha_text"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send"
+
+            android:layout_below="@id/editText_password"
+            android:layout_alignStart="@id/editText_password"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:onClick="logar"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Blank Bank</string>
-    <string name="text_edit_message">Escreva seu nome de usuário</string>
-    <string name="button_message">Entrar</string>
+    <string name="agencia_text">agência</string>
+    <string name="conta_text">conta</string>
+    <string name="senha_text">senha</string>
+    <string name="boasVindas">
+        <b>Olá! Nós somos o Blank Bank.</b>\n
+        Informe seus dados para utilizar nossos serviços.
+    </string>
+    <string name="button_send">Acessar!</string>
 </resources>

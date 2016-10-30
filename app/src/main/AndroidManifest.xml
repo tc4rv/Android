@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="aula_13.v_code.com.br.aula13">
+    package="aula_14.v_code.com.br.aula14">
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayMessageActivity"></activity>
+        <activity android:name=".TelaDeOpcoes" />
+        <activity android:name=".TelaExtrato" />
+        <activity android:name=".TelaTransferencia"></activity>
     </application>
 
 </manifest>

@@ -2,11 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    buildToolsVersion "24.0.2"
+
     defaultConfig {
-        applicationId "aula_13.v_code.com.br.aula13"
+        applicationId "aula_14.v_code.com.br.aula14"
         minSdkVersion 19
-        targetSdkVersion 22
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
@@ -15,8 +16,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    productFlavors {
     }
 }
 
